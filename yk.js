@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         yk
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.2
 // @description  try to take over the world!
 // @author       You
 // @match        http://vip.youku.com/vips/accountCard.html
@@ -11,12 +11,10 @@
 // ==/UserScript==
 
 (function() {
-kaiguan();
-$('body').everyTime('1800s','A',function(){
-    kaiguan();
-},0,true);
-
-    // Your code here...
+	kaiguan();
+	$('body').everyTime('1800s','A',function(){
+	    myrefresh();
+	},0,true);
 })();
 
 function kaiguan()
@@ -52,4 +50,8 @@ function ThisTime()
 	m = date.getMinutes() + ':';
 	s = date.getSeconds();
 	return Y+M+D+h+m+s;
+}
+function myrefresh()
+{
+   window.location.reload();
 }
